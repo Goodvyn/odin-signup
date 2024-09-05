@@ -2,8 +2,27 @@
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
 */
+
+/* fonts */
+@font-face {
+    font-family: 'norsebold';
+    src: url('fonts/webfontkit-20240904-182238/norse-bold-webfont.woff2') format('woff2'),
+        url('fonts/webfontkit-20240904-182238/norse-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
+}
+
+html {
+    --action-green: #596D48;
+    --darker-white: #F9FAFB;
+    --white: #ffffff;
+    font-size: 16px;
+    font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 * {
@@ -28,6 +47,152 @@ p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
 }
 
+
 #root, #__next {
     isolation: isolate;
+}
+
+.signup-wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+a {
+    color: var(--white)
+}
+
+.login-link {
+    color: var(--action-green);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.logo-bar {
+    background-color: rgba(0, 0, 0, 0.5);
+    max-height: fit-content;
+    padding: 1em;
+    margin-top: 24vh;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    background-color: cadetblue;
+    background-image: url(images/background-leaf-lalie-west.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.content {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3em;
+    background-color: var(--darker-white);
+}
+
+.logo-bar {
+    margin-bottom: auto;
+}
+
+.logo-wrapper {
+    display: flex;
+    max-width: fit-content;
+    margin: auto;
+}
+
+.logo-bar .brand-name {
+    font-family: 'norsebold', sans-serif;
+    font-size: 6em;
+    color: var(--white);
+}
+
+.logo-bar .logo-image {
+    width: 7em;
+    height: auto;
+    display: inline-block;
+    align-self: center;
+}
+
+.photo-credits {
+    color: var(--white);
+    font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.9em;
+    align-self: center;
+    margin-bottom: 1em;
+}
+
+.header, .footer, .form-wrapper, .submit-wrapper {
+    padding-left: 3em;
+}
+
+.header, .footer {
+    width: 85%;
+}
+
+.header p {
+    font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.5em;
+}
+
+.form-wrapper {
+    background-color: var(--white);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+
+    height: 33%;
+    width: 100%;
+}
+
+.primary-button {
+    width: 235px;
+    height: 50px;
+    color: var(--darker-white);
+    background-color: #596D48;
+    box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.35);
+    border-radius: 8px;
+    border: 0px;
+
+    font-weight: 600;
+    font-size: 1.2em;
+
+    padding: 0;
+
+}
+
+.primary-button:hover {
+    cursor: pointer;
+}
+
+.footer p {
+    font-size: 1em;
+}
+
+.user-information {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    gap: 24px 72px;
+    font-size: .8em;
+    font-weight: 400;
+    justify-content: flex-start;
+}
+
+.input-field {
+
+    font-size: 1.4rem;
+}
+
+.form-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-width: 260px;
 }
