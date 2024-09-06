@@ -21,6 +21,11 @@ html {
     --action-green: #596D48;
     --darker-white: #F9FAFB;
     --white: #ffffff;
+    --grey: #e5e7eb;
+    --dark-blue: #1f2937;
+    --blue-active: #1d4ed8;
+    --red: #b91c1c;
+    --left-padding-content: 3rem;
     font-size: 16px;
     font-family: "Roboto", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -40,6 +45,7 @@ img, picture, video, canvas, svg {
 }
 
 input, button, textarea, select {
+    font-size: 100%;
     font: inherit;
 }
 
@@ -77,7 +83,7 @@ a {
 .hero {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    flex: 2;
 
     background-color: cadetblue;
     background-image: url(images/background-leaf-lalie-west.jpg);
@@ -87,7 +93,7 @@ a {
 }
 
 .content {
-    flex: 2;
+    flex: 3;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -128,12 +134,12 @@ a {
     margin-bottom: 1em;
 }
 
-.header, .footer, .form-wrapper, .submit-wrapper {
-    padding-left: 3em;
-}
-
 .header, .footer {
     width: 85%;
+}
+
+.header {
+    padding-left: var(--left-padding-content);
 }
 
 .header p {
@@ -146,14 +152,19 @@ a {
 .form-wrapper {
     background-color: var(--white);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
-
-    height: 33%;
+    display: flex;
+    align-items: center;
+    padding: 24px var(--left-padding-content) 64px;
     width: 100%;
 }
 
+.submit-wrapper {
+    padding-left: var(--left-padding-content);
+}
+
 .primary-button {
-    width: 235px;
-    height: 50px;
+    width: 304px;
+    height: 64px;
     color: var(--darker-white);
     background-color: #596D48;
     box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.35);
@@ -161,7 +172,7 @@ a {
     border: 0px;
 
     font-weight: 600;
-    font-size: 1.2em;
+    font-size: 1.5em;
 
     padding: 0;
 
@@ -172,27 +183,74 @@ a {
 }
 
 .footer p {
-    font-size: 1em;
+    font-size: 1.2em;
+}
+
+.footer {
+    padding-left: var(--left-padding-content);
 }
 
 .user-information {
     display: flex;
     flex-wrap: wrap;
-    max-width: 800px;
-    gap: 24px 72px;
-    font-size: .8em;
-    font-weight: 400;
+    max-width: 900px;
+    gap: 8px 72px;
+    font-size: .9em;
+    font-weight: 500;
     justify-content: flex-start;
+    color: var(--dark-blue);
+    border: 0px;
+    padding: 0;
+}
+
+.user-information-legend {
+    font-size: 2em;
+    margin: 0 0 1em;
+    padding: 0;
 }
 
 .input-field {
+    font-size: 1.6em;
+    font-weight: 300;
+    border-radius: 6px;
+    border: 1px solid var(--grey);
+    padding-left: 12px;
+}
 
-    font-size: 1.4rem;
+
+.input-field:active, .input-field:focus {
+    border: 1px solid var(--blue-active);
+    outline: none;
+}
+
+.input-field:focus {
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+
+.input-field:user-invalid {
+    border: 1px solid var(--red);
+    outline: none;
+}
+
+
+.optional-text {
+    opacity: 0.6;
 }
 
 .form-input-wrapper {
     display: flex;
     flex-direction: column;
     flex: 1;
-    max-width: 260px;
+    max-width: 360px;
+    min-height: 88px;
+}
+
+#password:user-invalid+span::before {
+    content: "* Passwords do not match";
+    color: var(--red);
+}
+
+.form-input-wrapper label {
+    letter-spacing: 2px;
 }
